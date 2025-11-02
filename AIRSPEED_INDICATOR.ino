@@ -40,6 +40,10 @@ void my_disp_flush(lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t *color
     lv_disp_flush_ready(disp);
 }
 
+void onStbyAsiAirspeedChange(unsigned int newValue) {
+    lv_img_set_angle(img_airspeedNeedle, map(newValue, 0, 65530, 0, 3500));
+}
+DcsBios::IntegerBuffer stbyAsiAirspeedBuffer(0x74f0, 0xffff, 0, onStbyAsiAirspeedChange);
 
 
 void setup() {
@@ -74,6 +78,20 @@ void setup() {
     img_airSpeedIndicatorBG = lv_img_create(lv_scr_act());
     lv_img_set_src(img_airSpeedIndicatorBG, &airSpeedIndicatorBG);
     lv_obj_align(img_airSpeedIndicatorBG, LV_ALIGN_CENTER, 0, 0);
+
+    // ===== Needle =====
+    img_airspeedNeedle = lv_img_create(lv_scr_act());
+    lv_img_set_src(img_airspeedNeedle, &airspeedNeedle);
+
+    // Set the pivot to the bottom center of the image
+    lv_point_t pivot = {
+        airspeedNeedle.header.w / 2,   // horizontally centered
+        airspeedNeedle.header.h / 2       // very bottom
+    };
+    lv_img_set_pivot(img_airspeedNeedle, pivot.x, pivot.y);
+
+    // Align so the pivot (bottom center) is at the gauge center
+    lv_obj_align(img_airspeedNeedle, LV_ALIGN_CENTER, 0, 0);
 
 }
 
