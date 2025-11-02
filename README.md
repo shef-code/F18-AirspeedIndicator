@@ -3,15 +3,14 @@ I'm working on a replacement Bezel to cover the display and adapt it to the Open
 
 Requirements:
 
-ESP Board: ESP32 by Expressif (tested with version 3.3.1) https://espressif.github.io/arduino-esp32/package_esp32_index.json
+ESP Board: ESP32 by Expressif (tested with version 3.3.2) https://espressif.github.io/arduino-esp32/package_esp32_index.json
 
 LVGL v8.3.11: Install: Arduino IDE → Library Manager → search LVGL → install.
-
-2025-09-25_13-50-20_005 2025-09-08_12-24-30_979 2025-09-08_12-24-21_899
-
-I've included STL files I used to print a mounting base for the display and the Bezel.
 
 Its important to set the IDE up for the LCD Display. I've included a screenshot of my settings.
 
 IDE Settings
+<img width="621" height="999" alt="image" src="https://github.com/user-attachments/assets/e02d98ca-5d5e-4e83-b803-eb8e1544b8c6" />
+
+
 ## License This project is licensed under a [Custom Non-Commercial License](LICENSE). You can use and modify it for **personal and educational purposes only**. For commercial use, please contact me for permission.
