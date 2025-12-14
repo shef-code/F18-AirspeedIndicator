@@ -1,5 +1,4 @@
 This project is for the DCSWorld F18 Air Speed Indicator. The display being used is the Waveshare 1.85" LCD without tought screen. https://www.waveshare.com/wiki/ESP32-S3-LCD-1.85
-<p>I'm working on a replacement Bezel to cover the display and adapt it to the Open Hornet LIP frame. I'll add it to the project once its completed.</p>
 
 Requirements:
 
